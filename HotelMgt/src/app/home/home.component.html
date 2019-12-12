@@ -1,0 +1,38 @@
+<h3>Hotel Management</h3>
+<form [formGroup]="hotelForm" >
+    <label>
+      <input type="text" formControlName="hotelname" placeholder="Filter by Name">
+    </label>
+    <button (click)="onclick()">Search</button> <button (click)="reset()">Show All</button> 
+    <button (click)="insort()">Ascending Sort</button> 
+    <button (click)="desort()">Descending Sort</button> 
+    <button (click)="clear()">Clear all filters</button>
+</form>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Product ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Host Name</th>
+      <th scope="col">Neighbourhood Group</th>
+      <th scope="col">Neighbourhood</th>
+      <th scope="col">Latitude</th>
+      <th scope="col">Longitude</th>
+      <th scope="col">Room Type</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+     <tr *ngFor="let array of this.hotels "><td>{{array.id}}</td><td>{{array.name}}</td><td>{{array.hostname}}</td><td>{{array.neighbourhoodgroup}}</td><td>{{array.neighbourhood}}</td><td>{{array.latitude}}</td><td>{{array.longitude}}</td><td>{{array.roomtype}}</td><td>{{array.price}}</td></tr>
+  </tbody>
+</table>
+
+<!--
+  <div *ngIf="this.fhotels !== undefined">
+<tbody>
+     <tr *ngFor="let array of this.fhotels "><td>{{array.id}}</td><td>{{array.name}}</td><td>{{array.hostname}}</td><td>{{array.neighbourhoodgroup}}</td><td>{{array.neighbourhood}}</td><td>{{array.latitude}}</td><td>{{array.longitude}}</td><td>{{array.roomtype}}</td><td>{{array.price}}</td></tr>
+  </tbody>
+
+</div>
+-->
+
